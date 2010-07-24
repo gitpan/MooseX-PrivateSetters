@@ -3,6 +3,8 @@ package MooseX::PrivateSetters::Role::Attribute;
 use strict;
 use warnings;
 
+our $VERSION = '0.02';
+
 use Moose::Role;
 
 before '_process_options' => sub {
@@ -11,16 +13,12 @@ before '_process_options' => sub {
     my $options = shift;
 
     if ( exists $options->{is} &&
-         ! ( exists $options->{reader} || exists $options->{writer} ) )
-    {
-        if ( $options->{is} eq 'ro' )
-        {
+           ! ( exists $options->{reader} || exists $options->{writer} ) ) {
+        if ( $options->{is} eq 'ro' ) {
             $options->{reader} = $name;
-
             delete $options->{is};
         }
-        elsif ( $options->{is} eq 'rw' )
-        {
+        elsif ( $options->{is} eq 'rw' ) {
             $options->{reader} = $name;
             my $prefix = $name =~ /^_/  ?  '_set'  :  '_set_';
             $options->{writer} = $prefix . $name;
@@ -40,27 +38,31 @@ MooseX::PrivateSetters::Role::Attribute - Names setters as such, and makes them 
 
 =head1 SYNOPSIS
 
-  Moose::Util::MetaRole::apply_metaclass_roles
-      ( for_class => $p{for_class},
-        attribute_metaclass_roles =>
-        ['MooseX::PrivateSetters::Role::Attribute'],
-      );
+    Moose::Exporter->setup_import_methods(
+        class_metaroles => {
+            attribute => ['MooseX::PrivateSetters::Role::Attribute'],
+        },
+    );
 
 =head1 DESCRIPTION
 
 This role applies a method modifier to the C<_process_options()>
 method, and tweaks the writer parameters so that they are private with
-an explicit 'set'. Getters are left unchanged. This role copes with
-attributes intended to be private (ie, starts with an underscore),
-with no double-underscore in the setter.
+an explicit '_set_attr' method. Getters are left unchanged. This role
+copes with attributes intended to be private (ie, starts with an
+underscore), with no double-underscore in the setter.
 
 For example:
 
-    | Code                     | Reader | Writer     |
-    |--------------------------+--------+------------|
-    | has 'baz'  => (is 'rw'); | baz()  | _set_baz() |
-    | has 'baz'  => (is 'ro'); | baz()  |            |
-    | has '_baz' => (is 'rw'); | _baz() | _set_baz() |
+    | Code                      | Reader | Writer      |
+    |---------------------------+--------+-------------|
+    | has 'baz'  => (is 'rw');  | baz()  | _set_baz()  |
+    | has 'baz'  => (is 'ro');  | baz()  |             |
+    | has '_baz' => (is 'rw');  | _baz() | _set_baz()  |
+    | has '__baz' => (is 'rw'); | _baz() | _set__baz() |
+
+You probably don't want to use this module. You probably should be
+looking at L<MooseX::PrivateSetters> instead.
 
 =head1 AUTHOR
 

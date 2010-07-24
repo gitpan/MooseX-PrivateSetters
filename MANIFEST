@@ -8,5 +8,7 @@ MANIFEST			This list of files
 META.yml
 README
 t/basic.t
+TODO.org
 xt/pod-coverage.t
 xt/pod.t
+xt/version.t

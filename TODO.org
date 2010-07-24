@@ -1,0 +1,9 @@
+* [[TODO]]
+*** Study MooseX::Accessors::ReadWritePrivate and perhaps implement (steal) his ideas
+* [[DONE]]
+*** Add repository
+*** Modernise as per SemiAffordanceAccsessor etc
+*** Add SEE ALSO
+* [[WON'T DO/STALLED]]
+*** Add RATIONALE
+    - sick of writing reader=>'...', writer=>'...'

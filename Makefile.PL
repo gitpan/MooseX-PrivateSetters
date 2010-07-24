@@ -5,7 +5,7 @@ WriteMakefile
           'NAME' => 'MooseX::PrivateSetters',
           'VERSION_FROM' => 'lib/MooseX/PrivateSetters.pm',
           'PREREQ_PM' => {
-                           'Moose' => '0.84',
+                           'Moose' => '0.94',
                            'Test::More' => 0
                          },
           'INSTALLDIRS' => 'site',
