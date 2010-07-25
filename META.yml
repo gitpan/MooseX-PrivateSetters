@@ -1,7 +1,7 @@
 ---
 abstract: 'Name your accessors foo() and _set_foo()'
 author:
-  - 'brian greenfield, C<< <briang@cpan.org> >>'
+  - 'brian greenfield C<< <briang@cpan.org> >>'
 build_requires:
   Test::More: 0
 configure_requires:
@@ -15,13 +15,13 @@ name: MooseX-PrivateSetters
 provides:
   MooseX::PrivateSetters:
     file: lib/MooseX/PrivateSetters.pm
-    version: 0.02
+    version: 0.03
   MooseX::PrivateSetters::Role::Attribute:
     file: lib/MooseX/PrivateSetters/Role/Attribute.pm
-    version: 0.02
+    version: 0.03
 requires:
   Moose: 0.94
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/briang/MooseX-PrivateSetters
-version: 0.02
+version: 0.03

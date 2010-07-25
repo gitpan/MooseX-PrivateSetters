@@ -11,4 +11,3 @@ t/basic.t
 TODO.org
 xt/pod-coverage.t
 xt/pod.t
-xt/version.t

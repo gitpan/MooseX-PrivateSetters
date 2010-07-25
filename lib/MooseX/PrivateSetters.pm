@@ -3,7 +3,7 @@ package MooseX::PrivateSetters;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Moose 0.94 ();
 use Moose::Exporter;
@@ -34,8 +34,9 @@ MooseX::PrivateSetters - Name your accessors foo() and _set_foo()
     # make some attributes
 
     has 'foo' => ( is => 'rw' );
-
     ...
+
+    package main;
 
     sub bar {
         $self = shift;
@@ -47,15 +48,15 @@ MooseX::PrivateSetters - Name your accessors foo() and _set_foo()
 This module does not provide any methods. Simply loading it changes
 the default naming policy for the loading class so that accessors are
 separated into get and set methods. The get methods have the same name
-as the accessor, while set methods are prefixed with C<<_set_>>.
+as the accessor, while set methods are prefixed with C<_set_>.
 
-If you define an attribute with a leading underscore, then the set
-method will start with C<<_set_>>.
+If you deckare an attribute with a leading underscore, then the set
+method will start with C<_set_>.
 
-If you explicitly set a C<<reader>> or C<<writer>> name when creating
+If you explicitly set a C<reader> or C<writer> name when creating
 an attribute, then that attribute's naming scheme is left unchanged.
 
-Load order of this module is important. It must be C<<use>>d after
+Load order of this module is important. It must be C<use>d after
 L<Moose>.
 
 =head1 SEE ALSO
@@ -64,31 +65,31 @@ There are a number of similar modules on the CPAN.
 
 =head2 L<Moose>
 
-The original. A single mutator method with the same name as the
-attribute itself
+The original. A single mutator method is generated with the same name
+as the attribute itself.
 
 =head2 L<MooseX::Accessors::ReadWritePrivate>
 
-Changes the parsing of the C<<is>> clause, making new options
+Changes the parsing of the C<is> clause, making new options
 available. For example,
 
-    has baz => ( is => 'rpwp', # is private reader, is private writer
+    has baz => ( is => 'rpwp', # private reader, private writer
 
-gets you C<<_get_baz()>> and C<<_set_baz>>.
+gets you C<_get_baz()> and C<_set_baz>.
 
 =head2 L<MooseX::FollowPBP>
 
 Names accessors in the style recommended by I<Perl Best Practices>:
-C<<get_size>> and C<<set_size>>.
+C<get_size> and C<set_size>.
 
 =head2 L<MooseX::SemiAffordanceAccsessor>
 
 Has separate methods for getting and setting. The getter has the same
-name as the attribute, and the setter is prefixed with C<<set_>>.
+name as the attribute, and the setter is prefixed with C<set_>.
 
 =head1 AUTHOR
 
-brian greenfield, C<< <briang@cpan.org> >>
+brian greenfield C<< <briang@cpan.org> >>
 
 =head1 BUGS
 

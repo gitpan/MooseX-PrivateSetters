@@ -3,7 +3,7 @@ package MooseX::PrivateSetters::Role::Attribute;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Moose::Role;
 
@@ -66,7 +66,7 @@ looking at L<MooseX::PrivateSetters> instead.
 
 =head1 AUTHOR
 
-brian greenfield, C<< <briang@cpan.org> >>
+brian greenfield C<< <briang@cpan.org> >>
 
 =head1 COPYRIGHT & LICENSE
 
