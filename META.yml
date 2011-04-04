@@ -1,12 +1,12 @@
 ---
-abstract: 'Name your accessors foo() and _set_foo()'
+abstract: 'Names your accessors foo() and _set_foo()'
 author:
   - 'brian greenfield C<< <briang@cpan.org> >>'
 build_requires:
   Test::More: 0
 configure_requires:
   Module::Build: 0
-generated_by: 'Module::Build version 0.3607'
+generated_by: 'Module::Build version 0.3603'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -15,13 +15,13 @@ name: MooseX-PrivateSetters
 provides:
   MooseX::PrivateSetters:
     file: lib/MooseX/PrivateSetters.pm
-    version: 0.03
+    version: 0.04
   MooseX::PrivateSetters::Role::Attribute:
     file: lib/MooseX/PrivateSetters/Role/Attribute.pm
-    version: 0.03
+    version: 0.04
 requires:
   Moose: 0.94
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/briang/MooseX-PrivateSetters
-version: 0.03
+version: 0.04

@@ -1,3 +1,9 @@
+0.04    2011-04-04
+        - Make compatable with upcoming Moose 2.0 (code provided my
+          Dave Rolsky). See
+          http://blog.moose.perl.org/2011/03/changes-to-moosex-modules-with-moose-20.html
+          for details.
+
 0.03    2010-07-25
 	- Minor documentation changes
 
@@ -11,7 +17,5 @@
         - add TODO.org
 
 0.01    2010-07-15
-
-        Initial release
-
+        - Initial release
         - Based on Dave Rolsky's MooseX-SemiAffordanceAccessor-0.05
