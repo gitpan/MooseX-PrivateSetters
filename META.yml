@@ -16,13 +16,13 @@ name: MooseX-PrivateSetters
 provides:
   MooseX::PrivateSetters:
     file: lib/MooseX/PrivateSetters.pm
-    version: 0.06
+    version: 0.07
   MooseX::PrivateSetters::Role::Attribute:
     file: lib/MooseX/PrivateSetters/Role/Attribute.pm
-    version: 0.06
+    version: 0.07
 requires:
   Moose: 0.94
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/briang/MooseX-PrivateSetters
-version: 0.06
+version: 0.07

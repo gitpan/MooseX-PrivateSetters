@@ -23,7 +23,7 @@ DESCRIPTION
     separated into get and set methods. The get methods have the same name
     as the accessor, while set methods are prefixed with "_set_".
 
-    If you deckare an attribute with a leading underscore, then the set
+    If you declare an attribute with a leading underscore, then the set
     method will start with "_set_".
 
     If you explicitly set a "reader" or "writer" name when creating an
